@@ -1,8 +1,9 @@
 from peewee import MySQLDatabase, Model, CharField, ForeignKeyField, DateField, DateTimeField, SmallIntegerField, TextField
 from datetime import datetime
+from config import *
 
 
-database = MySQLDatabase('mysql://navid:Mnjannati71@@127.0.0.1:3306/goodreads')
+database = MySQLDatabase(APP, user=USER, password=PASSWORD, host=HOST, port=PORT)
 
 
 class BaseModel(Model):
