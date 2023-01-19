@@ -19,7 +19,15 @@ class BaseModel(Model):
 
 class User(BaseModel):
     username = CharField(max_length=32)
-    password = CharField(max_length=32)
+    password = CharField(max_length=32)    
+
+
+        
+    # def login(cls, username, password):
+    #     user = User.select()
+    #     if username in user.username and password in user.password:
+    #         return user.username
+    #     return 'Not found... please register.'
 
 
 class Book(BaseModel):
@@ -32,6 +40,11 @@ class Author(BaseModel):
 
 
 class Shelf(BaseModel):
+    READ = 'read'
+    CURRENTLY_READING = 'currently reading'
+    WANT_TO_READ = 'want to read'
+
+
     name = CharField(max_length=32)
     user = ForeignKeyField(User, backref='shelves')
 
