@@ -40,9 +40,10 @@ class Author(BaseModel):
 
 
 class Shelf(BaseModel):
-    READ = 'read'
-    CURRENTLY_READING = 'currently reading'
-    WANT_TO_READ = 'want to read'
+    # READ = 'read'
+    # CURRENTLY_READING = 'currently reading'
+    # WANT_TO_READ = 'want to read'
+    DEFAULT_SHELVES = ['read', 'want to read', 'currently reading']
 
 
     name = CharField(max_length=32)
